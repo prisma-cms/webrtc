@@ -1,12 +1,10 @@
 {
-  "name": "bbbbbb",
-  "version": "0.1.0",
+  "name": "@prisma-cms/component-boilerplate",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@prisma-cms/front": "^1.6.2-beta",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4"
+    "react-dom": "^16.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,6 +23,28 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "react-scripts": "2.0.4",
+    "@prisma-cms/front": "^1.6.2-beta",
     "nwb": "^0.23.0"
-  }
+  },
+  "description": "Tests module for @prisma-cms",
+  "main": "/lib/App.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prisma-cms/component-boilerplate.git"
+  },
+  "keywords": [
+    "prisma-cms",
+    "front",
+    "components"
+  ],
+  "author": "Fi1osof",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prisma-cms/component-boilerplate/issues"
+  },
+  "homepage": "https://github.com/prisma-cms/component-boilerplate#readme"
 }
