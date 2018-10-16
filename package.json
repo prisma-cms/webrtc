@@ -1,7 +1,7 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
