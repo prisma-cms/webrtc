@@ -1,8 +1,8 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
-  "main": "/lib/App.js",
+  "main": "lib/App.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "nwb build --copy-files",
@@ -15,9 +15,9 @@
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "@prisma-cms/front": "^1.9.1-beta",
+    "@prisma-cms/front": "^1.9.6-beta",
     "nwb": "^0.23.0",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.5"
   },
   "eslintConfig": {
     "extends": "react-app"
