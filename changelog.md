@@ -1,3 +1,9 @@
+1.0.5
+=================================
+- Upgrade React
+- Clean css
+- Move tests into default
+
 1.0.4
 =================================
 - Upgrade @prisma-cms/front

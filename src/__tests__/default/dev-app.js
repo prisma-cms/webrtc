@@ -65,7 +65,7 @@ describe('@prisma-cms/tests app', () => {
 
   it('Render Index App', () => {
   
-    require("../index"); 
+    require("../../index"); 
 
     expect(node.textContent).toContain("Main page");
     expect(node.textContent).toContain("Users");

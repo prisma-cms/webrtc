@@ -1,6 +1,6 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -11,11 +11,11 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@prisma-cms/front": "^1.9.7-beta",
+    "@prisma-cms/front": "^1.9.8-beta",
     "nwb": "^0.23.0",
     "react-scripts": "2.0.5"
   },

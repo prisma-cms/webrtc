@@ -1,6 +1,6 @@
 
 
-import proxy from "../setupProxy";
+import proxy from "../../setupProxy";
 
 describe('@prisma-cms/tests proxy', () => { 
 

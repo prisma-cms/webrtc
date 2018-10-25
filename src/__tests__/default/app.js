@@ -4,7 +4,7 @@ import expect from 'expect'
 import React, { Component } from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 
-import App from "../App";
+import App from "../../App";
 
 
 
