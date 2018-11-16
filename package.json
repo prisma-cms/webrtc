@@ -1,12 +1,13 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "nwb build --copy-files",
+    "build": "yarn build-less && nwb build --copy-files",
     "build-app": "react-scripts build",
+    "build-less": "node-less-chokidar src/styles/less",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -15,7 +16,8 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@prisma-cms/front": "^1.9.8-beta",
+    "@prisma-cms/front": "latest",
+    "node-less-chokidar": "latest",
     "nwb": "^0.23.0",
     "react-scripts": "2.0.5"
   },
