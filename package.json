@@ -1,6 +1,6 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -8,18 +8,26 @@
     "build": "yarn build-less && nwb build --copy-files",
     "build-app": "react-scripts build",
     "build-less": "node-less-chokidar src/styles/less",
+    "get-api-schema": "graphql get-schema -o src/schema/generated/api.graphql",
+    "build-api-fragments": "node --experimental-modules src/server/scripts/deploy/build-api-fragments",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "graphql": "14.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",
+    "@prisma-cms/server": "latest",
+    "graphql-cli": "2.17.0",
     "node-less-chokidar": "latest",
     "nwb": "^0.23.0",
     "react-scripts": "2.0.5"
+  },
+  "resolutions": {
+    "graphql": "14.0.2"
   },
   "eslintConfig": {
     "extends": "react-app"
