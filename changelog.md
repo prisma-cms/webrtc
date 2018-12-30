@@ -1,3 +1,8 @@
+1.2.0
+=================================
+- Upgrade packages
+- Get apollo-cms apiQuery from generated schema
+
 1.1.0
 =================================
 - Added schema generation

@@ -2,6 +2,10 @@
 
 ## Tests module for [@prisma-cms](https://github.com/prisma-cms/boilerplate)
 
+## Get schema from @prisma-cms
+1. yarn get-api-schema -e http://localhost:4000
+2. yarn build-api-fragments
+
 ### Run tests
 1. Start @prisma-cms/server
 2. Start @prisma-cms/front

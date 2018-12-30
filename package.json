@@ -1,6 +1,6 @@
 {
   "name": "@prisma-cms/component-boilerplate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": false,
   "main": "lib/App.js",
   "scripts": {
@@ -14,9 +14,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "graphql": "14.0.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "graphql": "14.0.2"
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",
@@ -24,7 +22,7 @@
     "graphql-cli": "2.17.0",
     "node-less-chokidar": "latest",
     "nwb": "^0.23.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.1.2"
   },
   "resolutions": {
     "graphql": "14.0.2"

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import PrismaCmsApp from '@prisma-cms/front'
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 
-import * as queryFragments from "@prisma-cms/front/lib/schema/generated/api.fragments";
+import * as queryFragments from "../schema/generated/api.fragments";
 
 import App from "../App";
 
@@ -24,14 +24,19 @@ class DevRenderer extends PrismaCmsRenderer {
 
   getRoutes() {
 
-    return [{
-      exact: true,
-      path: "/",
-      component: App,
-    }, {
-      path: "*",
-      render: props => this.renderOtherPages(props),
-    },];
+    let routes = super.getRoutes();
+
+    return [
+      {
+        exact: true,
+        path: "/",
+        component: App,
+      },
+      // {
+      //   path: "*",
+      //   render: props => this.renderOtherPages(props),
+      // },
+    ].concat(routes);
 
   }
 
@@ -65,12 +70,10 @@ export default class DevApp extends Component {
   render() {
 
     const {
-      queryFragments,
       ...other
     } = this.props;
 
     return <PrismaCmsApp
-      queryFragments={queryFragments}
       Renderer={DevRenderer}
       // pure={true}
       {...other}
