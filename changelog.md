@@ -1,3 +1,8 @@
+1.2.1
+=================================
+- Added MainMenu
+- Move Renderer in separated file
+
 1.2.0
 =================================
 - Upgrade packages
