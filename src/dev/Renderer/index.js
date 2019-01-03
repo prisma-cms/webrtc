@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-import App from "../../App";
+import App, {
+  ContextProvider, 
+  SubscriptionProvider,
+} from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 
@@ -54,9 +57,13 @@ class DevRenderer extends PrismaCmsRenderer {
       ...other
     } = this.props;
 
-    return pure ? <App
-      {...other}
-    /> : super.render();
+    return <ContextProvider>
+      <SubscriptionProvider>
+        {pure ? <App
+          {...other}
+        /> : super.render()}
+      </SubscriptionProvider>
+    </ContextProvider>;
 
   }
 

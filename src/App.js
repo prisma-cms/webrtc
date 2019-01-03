@@ -3,11 +3,22 @@ import PropTypes from 'prop-types';
 
 import "./styles/less/styles.css";
 
+import {
+  Context,
+} from '@prisma-cms/front'
+
+import SubscriptionProvider from "./components/SubscriptionProvider";
+import ContextProvider from "./components/ContextProvider";
+
+export {
+  Context,
+  ContextProvider,
+  SubscriptionProvider,
+}
+
 class App extends Component {
 
-  static propTypes = {
-
-  };
+  static contextType = Context;
 
   render() {
     return (
@@ -17,5 +28,5 @@ class App extends Component {
     );
   }
 }
- 
+
 export default App;

@@ -1,3 +1,10 @@
+1.3.0
+=================================
+- Added ContextProvider
+- Added SubscriptionProvider
+- Added queries
+- Set @prisma-cms/front as dependency
+
 1.2.1
 =================================
 - Added MainMenu
