@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
 import App, {
-  ContextProvider, 
+  ContextProvider,
   SubscriptionProvider,
 } from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
-
-import MainMenu from './MainMenu';
 
 
 class DevRenderer extends PrismaCmsRenderer {
@@ -44,9 +42,14 @@ class DevRenderer extends PrismaCmsRenderer {
   }
 
 
-  renderMenu() {
+  renderWrapper() {
 
-    return <MainMenu />
+    return <ContextProvider>
+      <SubscriptionProvider>
+        {super.renderWrapper()}
+      </SubscriptionProvider>
+    </ContextProvider>;
+
   }
 
 
@@ -57,13 +60,9 @@ class DevRenderer extends PrismaCmsRenderer {
       ...other
     } = this.props;
 
-    return <ContextProvider>
-      <SubscriptionProvider>
-        {pure ? <App
-          {...other}
-        /> : super.render()}
-      </SubscriptionProvider>
-    </ContextProvider>;
+    return pure ? <App
+      {...other}
+    /> : super.render();
 
   }
 

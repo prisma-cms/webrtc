@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import "./styles/less/styles.css";
 
-import {
-  Context,
-} from '@prisma-cms/front'
+import Context from '@prisma-cms/context';
 
 import SubscriptionProvider from "./components/SubscriptionProvider";
 import ContextProvider from "./components/ContextProvider";

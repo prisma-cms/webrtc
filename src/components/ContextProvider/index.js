@@ -9,27 +9,27 @@ import {
 } from "../../App";
 
 
-class SocietyContext extends Component {
+class ContextProvider extends Component {
 
   static contextType = Context;
 
 
-  componentWillMount() {
+  // componentWillMount() {
 
-    const {
-      query,
-      ...other
-    } = this.context;
+  //   const {
+  //     query,
+  //     ...other
+  //   } = this.context;
 
-    this.newContext = {
-      query: {
-        ...query,
-        ...this.prepareQuery(),
-      },
-      ...other
-    }
+  //   this.newContext = {
+  //     query: {
+  //       ...query,
+  //       ...this.prepareQuery(),
+  //     },
+  //     ...other
+  //   }
 
-  }
+  // }
 
 
   render() {
@@ -38,8 +38,16 @@ class SocietyContext extends Component {
       children,
     } = this.props;
 
+    let {
+      query,
+    } = this.context;
+
+    Object.assign(query, {
+      ...this.prepareQuery(),
+    });
+
     return <Context.Provider
-      value={this.newContext}
+      value={this.context}
     >
       {children || null}
     </Context.Provider>;
@@ -198,4 +206,4 @@ class SocietyContext extends Component {
 
 }
 
-export default SocietyContext;
+export default ContextProvider;
