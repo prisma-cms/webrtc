@@ -39,6 +39,11 @@ export default class SubscriptionProvider extends Component {
     } = this.context;
 
 
+    if(!client){
+      console.error("client is empty");
+      return;
+    }
+
     await this.unsubscribe();
 
 
