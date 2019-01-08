@@ -9,7 +9,6 @@ import SubscriptionProvider from "./components/SubscriptionProvider";
 import ContextProvider from "./components/ContextProvider";
 
 export {
-  Context,
   ContextProvider,
   SubscriptionProvider,
 }

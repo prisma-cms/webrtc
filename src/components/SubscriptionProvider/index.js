@@ -4,9 +4,7 @@ import PropTypes from 'prop-types'
 
 import gql from "graphql-tag";
 
-import {
-  Context,
-} from "../../App";
+import Context from '@prisma-cms/context';
 
 export default class SubscriptionProvider extends Component {
 

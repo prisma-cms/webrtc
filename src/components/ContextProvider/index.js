@@ -3,10 +3,7 @@ import React, {
   Component,
 } from 'react';
 
-
-import {
-  Context,
-} from "../../App";
+import Context from '@prisma-cms/context';
 
 
 class ContextProvider extends Component {
@@ -57,8 +54,14 @@ class ContextProvider extends Component {
 
   }
 
-
   prepareQuery() {
+
+    return {
+      ...this.prepareUserQuery(),
+    }
+  }
+
+  prepareUserQuery() {
 
 
     const {
