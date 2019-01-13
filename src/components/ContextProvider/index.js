@@ -71,6 +71,7 @@ class ContextProvider extends Component {
 
     const {
       UserNoNestingFragment,
+      BatchPayloadNoNestingFragment,
     } = queryFragments;
 
 
@@ -140,7 +141,7 @@ class ContextProvider extends Component {
       query user (
         $where: UserWhereUniqueInput!
       ){
-        object: users (
+        object: user (
           where: $where
         ){
           ...UserNoNesting
@@ -200,12 +201,42 @@ class ContextProvider extends Component {
 
 
 
+    const deleteUser = `
+      mutation deleteUser (
+        $where: UserWhereUniqueInput!
+      ){
+        deleteUser(
+          where: $where
+        ){
+          ...UserNoNesting
+        }
+      }
+      ${UserNoNestingFragment}
+    `;
+
+
+    const deleteManyUsers = `
+      mutation deleteManyUsers (
+        $where: UserWhereInput
+      ){
+        deleteManyUsers(
+          where: $where
+        ){
+          ...BatchPayloadNoNesting
+        }
+      }
+      ${BatchPayloadNoNestingFragment}
+    `;
+
+
     return {
       usersConnection,
       users,
       user,
       createUserProcessor,
       updateUserProcessor,
+      deleteUser,
+      deleteManyUsers,
     }
 
   }

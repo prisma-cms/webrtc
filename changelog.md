@@ -1,3 +1,9 @@
+1.3.5
+=================================
+- Fix user query
+- Add deleteUser query
+- Add deleteManyUsers query
+
 1.3.4
 =================================
 - Fix mount App
