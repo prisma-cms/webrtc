@@ -228,24 +228,24 @@ export class Calls extends Component {
       /**
        * Если звонок активный, выводим иконку, чтобы всегда можно было перейти в него
        */
-      if (status === "Started" && room) {
+      // if (status === "Started" && room) {
 
 
-        callsView.push(<IconButton
-          key="activeCall"
-          onClick={event => {
-            router.history.push(`/inbox/${room}/`)
-          }}
-        >
-          <TalkIcon
-            style={{
-              // color: activeCall ? undefined : "green",
-              color: "green",
-            }}
-          />
-        </IconButton>);
+      //   callsView.push(<IconButton
+      //     key="activeCall"
+      //     onClick={event => {
+      //       router.history.push(`/inbox/${room}/`)
+      //     }}
+      //   >
+      //     <TalkIcon
+      //       style={{
+      //         // color: activeCall ? undefined : "green",
+      //         color: "green",
+      //       }}
+      //     />
+      //   </IconButton>);
 
-      }
+      // }
 
     }
 
