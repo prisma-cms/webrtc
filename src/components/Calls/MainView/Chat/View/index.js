@@ -63,7 +63,7 @@ export default class CallChatView extends View {
 
     const messages = this.renderMessages();
 
-    // console.log("Chat messages render", messages);
+
 
     const {
       classes,

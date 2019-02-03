@@ -84,7 +84,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   componentDidMount() {
 
-    console.log("WebRtcProvider componentDidMount");
+
 
     this.init();
   }
@@ -101,7 +101,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       user: prevUser,
     } = prevProps || {};
 
-    // console.log("componentDidUpdate prevContext", user, prevUser);
+
 
 
     if (
@@ -124,7 +124,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   forceUpdate() {
 
-    console.log("forceUpdate");
+
 
     const {
       rendererForceUpdate,
@@ -146,7 +146,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
     //   user,
     // } = this.props;
 
-    // // console.log("WebRtcChatProvider init", user);
+
 
     // if (user) {
     //   // await this.initDevides();
@@ -238,7 +238,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
   // callUser = async (variables) => {
   callUser = async (calledId, requestData) => {
 
-    console.log("callUser, calledId, requestData", calledId, requestData);
+
 
     const {
       query: {
@@ -246,7 +246,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       },
     } = this.context;
 
-    // console.log("createCallRequestProcessor", createCallRequestProcessor);
+
 
 
     let {
@@ -266,7 +266,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
     });
 
 
-    console.log("callUser setState requesttedCalls", requesttedCalls);
+
 
     // const result = await this.mutate({
     const result = await this.mutate({
@@ -291,7 +291,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       },
     })
       .then(r => {
-        console.log("callUser createCallRequest result", r);
+
 
         this.setState({
           requesttedCalls: [],
@@ -321,7 +321,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       RTCMultiConnection,
     } = global;
 
-    console.log("addConnection", roomId);
+
 
     let {
       connections,
@@ -373,8 +373,8 @@ export default class WebRtcProvider extends PrismaCmsComponent {
         video: connection.DetectRTC && connection.DetectRTC.videoInputDevices && connection.DetectRTC.videoInputDevices.length ? true : false,
       }
 
-      console.log("RTCMultiConnection connection.DetectRTC", connection.DetectRTC);
-      console.log("RTCMultiConnection connection detect mediaConstraints", mediaConstraints);
+
+
 
       if (!mediaConstraints.audio && !mediaConstraints.video) {
         console.error("Devices not found");
@@ -413,7 +413,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
           connections,
         } = this.state;
 
-        // console.log("onstreamended", event);
+
 
         const {
           streamid,
@@ -448,7 +448,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
 
       connection.openOrJoin(roomId, function (isRoomExists, roomid) {
-        console.log("openOrJoin isRoomExists, roomid", isRoomExists, roomid);
+
       });
 
       this.forceUpdate();
@@ -471,7 +471,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
 
   onConnectionClose = (connection) => {
-    // console.log("onConnectionClose", connection);
+
   }
 
   closeConnection = () => {
@@ -486,7 +486,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       user: currentUser,
     } = this.props;
 
-    console.log("closeConnection", connections, callRequests);
+
 
     if (!currentUser) {
       return;
@@ -524,7 +524,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     callRequests.map(async callRequest => {
 
-      console.log("Stop callRequest", callRequest);
+
 
       const {
         id: callRequestId,
@@ -544,7 +544,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       } = this.state;
 
 
-      console.log("Stop callRequest isCalling", isCalling, callerId, currentUserId);
+
 
       if (!isCalling || callerId !== currentUserId || ["Started"].indexOf(status) === -1) {
 
@@ -567,7 +567,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   onstream = async (event) => {
 
-    console.log("onstream", event);
+
 
     const {
       streamid,
@@ -594,7 +594,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     if (type === "remote") {
 
-      // console.log("onStream event remote stream", userid, stream);
+
 
       /**
        * Пытаемся среди локальных колл-реквестов найти такой, где
@@ -610,7 +610,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       // Если такой стрим был найден, коннектимся в контракт
       if (callRequest) {
 
-        // console.log("localPeerConnection addstream", a, b, c);
+
 
         this.joinCall(callRequest);
 
@@ -684,7 +684,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
    * Здесь приходят все изменения по всем звонкам
    */
   onCallDataReceived = async data => {
-    console.log("onCallDataReceived", data);
+
 
     const {
       callRequest: {
@@ -751,11 +751,11 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     // const localStream = await this.getUserMedia();
 
-    console.log("Updated callRequest", callRequest);
 
-    console.log("onCallDataReceived status", status);
-    console.log("onCallDataReceived requesttedCalls", requesttedCalls);
-    console.log("onCallDataReceived callerId === currentUserId", callerId === currentUserId, callerId, currentUserId);
+
+
+
+
 
     /**
      * В зависимости от статуса выполняем те или иные действия
@@ -771,7 +771,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
       case "Accepted":
 
-        console.log("Accepted callRequest", callRequest);
+
 
 
         /**
@@ -786,7 +786,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
          * Временный хак, так как ответ от сервера приходит только когда окончательно завершится звонок
          */
         if (requesttedCalls && requesttedCalls.length && callerId === currentUserId) {
-          console.log("requesttedCalls addConnection", roomId, callRequest);
+
 
           /**
            * 
@@ -817,7 +817,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       // можно добавлять свой стрим
       case "Answer":
 
-        // console.log("Answer callRequest", callRequest);
+
 
         break;
 
@@ -884,13 +884,13 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
 
   onReject() {
-    // console.log("onReject");
+
   }
 
 
   async createPeerConnection(callerId, calledId, callRequestId) {
 
-    // console.log("createPeerConnection");
+
 
     return;
 
@@ -923,7 +923,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
   acceptCall = async callRequestId => {
 
 
-    console.log("Member acceptCall", callRequestId, currentUserId);
+
 
     const {
       callRequests,
@@ -1016,7 +1016,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   rejectCall = callRequestId => {
 
-    // console.log("rejectCall", callRequestId);
+
 
     return this.updateCallRequest(callRequestId, {
       status: "Rejected",
@@ -1049,7 +1049,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       },
     }).catch(console.error);
 
-    // console.log("update result", result);
+
 
   }
 

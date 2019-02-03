@@ -48,7 +48,7 @@ export class ChatMessageEditor extends Editable {
 
     data = super.getMutationVariables(data);
 
-    // console.log("getMutationVariables data", data);
+
 
     const {
       roomId,
@@ -111,7 +111,7 @@ export class ChatMessageEditor extends Editable {
             readOnly={false}
             // value={text || {}}
             onEditorStateChange={(editorState, rawContent) => {
-              // console.log("onEditorStateChange", editorState, rawContent);
+
               this.setState({
                 // text: rawContent,
                 editorState,
@@ -119,7 +119,7 @@ export class ChatMessageEditor extends Editable {
             }}
             editorState={editorState}
             onChange={(rawContent) => {
-              // console.log("onChange", rawContent);
+
               this.updateObject({
                 text: rawContent,
               });
@@ -162,7 +162,7 @@ export class ChatMessageEditor extends Editable {
                     bottom: "auto",
                   }}
                   onClick={event => {
-                    // console.log("Save");
+
                     this.save();
                   }}
                   disabled={!editorState}
@@ -185,7 +185,7 @@ export default compose(
   graphql(sendDirectMessage, {
     // options: props => {
 
-    //   console.log("sendDirectMessage props", props);
+
 
     //   return {}
     // },

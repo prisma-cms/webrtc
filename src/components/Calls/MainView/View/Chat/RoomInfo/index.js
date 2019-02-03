@@ -33,7 +33,7 @@ const styles = {
   },
 }
 
-// console.log("users", users);
+
 
 
 class RoomInfo extends PrismaCmsComponent {

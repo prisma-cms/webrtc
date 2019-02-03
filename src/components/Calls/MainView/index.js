@@ -286,7 +286,7 @@ export class CallMainView2 extends PrismaCmsComponent {
   callUser = async (expertId, callId) => {
 
 
-    console.log("callUser");
+
 
     const {
       callUser,
@@ -303,11 +303,11 @@ export class CallMainView2 extends PrismaCmsComponent {
      */
     await callUser(expertId, callId)
       .then(r => {
-        console.log("callUser result", r);
+
         return r;
       })
       .catch(error => {
-        console.log("callUser error", error);
+
         return error;
       })
       ;
@@ -386,7 +386,7 @@ export class CallMainView2 extends PrismaCmsComponent {
     //   })
     // // .catch(console.error);
 
-    // // console.log("updateCall result", result);
+
 
   }
 
@@ -430,7 +430,7 @@ export class CallMainView2 extends PrismaCmsComponent {
 
     callRequests = callRequests ? callRequests.filter(n => ["Created", "Accepted", "Started"].indexOf(n.status) !== -1) : [];
 
-    console.log("Active callRequests", callRequests);
+
 
     // const {
     //   closeCall,
@@ -447,7 +447,7 @@ export class CallMainView2 extends PrismaCmsComponent {
     const call = this.getCall();
 
 
-    console.log("activeCall", call);
+
 
     if (!currentUser) {
       return null;
@@ -493,14 +493,14 @@ export class CallMainView2 extends PrismaCmsComponent {
     const hasMyIncomeRequests = callRequests && callRequests.filter(n => n.Called.id === currentUserId) || [];
 
 
-    // console.log("hasMyOutcomeRequest", hasMyOutcomeRequest, callRequests, currentUserId);
-    console.log("hasMyIncomeRequests", hasMyIncomeRequests, callRequests, currentUserId);
+
+
 
 
 
     if (ChatRoom) {
 
-      // console.log("ChatRoom", ChatRoom);
+
       // return null;
 
 
@@ -521,7 +521,7 @@ export class CallMainView2 extends PrismaCmsComponent {
       const callStatus = "Accepted";
 
 
-      console.log("callStatus", callStatus);
+
 
       switch (callStatus) {
 
@@ -529,7 +529,7 @@ export class CallMainView2 extends PrismaCmsComponent {
         case "Requested":
 
 
-          // console.log("expertId !== currentUserId", expertId, currentUserId);
+
 
           // if (expertId !== currentUserId) {
           //   buttons.push("Waiting for reception");
@@ -569,7 +569,7 @@ export class CallMainView2 extends PrismaCmsComponent {
         case "Accepted":
         case "Started":
 
-          console.log("expertId === currentUserId", expertId === currentUserId);
+
 
           if (expertId === currentUserId) {
 
@@ -582,8 +582,8 @@ export class CallMainView2 extends PrismaCmsComponent {
              * - если это эксперт, то кнопка завершения всех соединений
              */
 
-            console.log("hasMyOutcomeRequest", hasMyOutcomeRequest);
-            console.log("hasMyIncomeRequests", hasMyIncomeRequests);
+
+
 
             if (hasMyOutcomeRequest) {
 
@@ -881,8 +881,8 @@ export class CallMainView2 extends PrismaCmsComponent {
     let columns = [];
 
 
-    // console.log("videoView", videoView);
-    // console.log("videoView otherStreamsView", otherStreamsView);
+
+
 
     if (otherStreamsView && otherStreamsView.length && videoView) {
 

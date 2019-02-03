@@ -42,7 +42,7 @@ export default class CallRequestsSubscriber extends Component {
 
   // componentDidUpdate(){
 
-  //   console.log("CallRequestsSubscriber componentDidUpdate", this.context.streams);
+
 
   //   super.componentDidUpdate && super.componentDidUpdate();
   // }
@@ -89,7 +89,7 @@ export default class CallRequestsSubscriber extends Component {
         next: async (response) => {
           // ... call updateQuery to integrate the new comment
           // into the existing list of comments
-          console.log("callRequestSubscription updated", response);
+
 
           const {
             errors,

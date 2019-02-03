@@ -35,7 +35,7 @@ export default class RoomView extends PrismaCmsComponent {
 
   //   const rawContent = editorState ? convertToRaw(editorState.getCurrentContent()) : undefined;
 
-  //   // console.log("onEditorStateChange", editorState, rawContent);
+
 
   //   this.setState({
   //     // text: rawContent,
@@ -47,7 +47,7 @@ export default class RoomView extends PrismaCmsComponent {
 
   // resetEditorState = () => {
 
-  //   // console.log("createEditorState", createEditorState);
+
 
   //   this.setState({
   //     editorState: createEditorState(),
@@ -59,7 +59,7 @@ export default class RoomView extends PrismaCmsComponent {
 
   // async sendMessage() {
 
-  //   // console.log("sendMessage");
+
 
   //   const {
   //     // editorState,

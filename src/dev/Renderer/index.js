@@ -31,7 +31,7 @@ import MainMenu from './MainMenu';
 
 export const styles = theme => {
 
-  // console.log("theme", theme);
+
 
   const {
     typography: {

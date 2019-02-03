@@ -56,7 +56,7 @@ export class Calls extends Component {
   // callUser
   callUser = (userId, roomId) => {
 
-    console.log("callUser");
+
 
     const {
       callUser,

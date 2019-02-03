@@ -57,7 +57,7 @@ export class MediaStream extends Component {
       return null;
     }
 
-    console.log("stream", stream);
+
 
     // return "Stream";
 
@@ -68,7 +68,7 @@ export class MediaStream extends Component {
     const audioTrack = stream.getAudioTracks()[0];
     const videoTrack = stream.getVideoTracks()[0];
 
-    // console.log("videoTrack", videoTrack);
+
 
     let player;
 
@@ -96,7 +96,7 @@ export class MediaStream extends Component {
           // src={src}
           ref={element => {
 
-            // console.log("element", element);
+
             if (element) {
               element.srcObject = stream;
             }
@@ -119,7 +119,7 @@ export class MediaStream extends Component {
           // src={src}
           ref={element => {
 
-            // console.log("element", element);
+
             if (element) {
               element.srcObject = stream;
             }

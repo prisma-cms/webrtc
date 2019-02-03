@@ -84,12 +84,12 @@ export default class IceCandidateCubscriber extends Component {
             },
           } = response;
 
-          // console.log("iceCandidate updated", response);
-          // console.log(`APIonicecandidateRECEIVE ${to} <= ${from}`, response);
 
 
-          // console.log(`APIonicecandidate_SHORT_RECEIVE_2 ${to} <= ${from}`, response);
-          // console.log(`APIonicecandidate_FULL_RECEIVE ${to} <= ${from}`, event.candidate);
+
+
+
+
 
           const {
             onIceCandidate,

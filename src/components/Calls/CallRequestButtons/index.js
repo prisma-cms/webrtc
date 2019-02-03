@@ -36,7 +36,7 @@ export class CallRequestButtons extends Component {
     const requestedCalls = callRequests;
 
 
-    console.log("callRequests", callRequests, requestedCalls);
+
 
     // return "sdfdsf";
 
@@ -85,7 +85,7 @@ export class CallRequestButtons extends Component {
         accept={async event => {
           acceptCall(callRequestId)
           .then(r => {
-            console.log("accept r", r);
+
           });
           // setActiveCall(room);
           // setActiveCall(currentCallRequest);

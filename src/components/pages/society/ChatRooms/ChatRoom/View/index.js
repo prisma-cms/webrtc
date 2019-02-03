@@ -34,7 +34,7 @@ export class ChatRoomView extends ChatRoomViewProto {
 
   //   super(props);
 
-  //   console.log("ChatRoomView constructor");
+
 
   // }
 

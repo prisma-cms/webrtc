@@ -9,7 +9,7 @@ class Test extends Component {
   componentDidMount() {
 
 
-    console.log("Test componentDidMount");
+
 
     setTimeout(() => {
 
@@ -28,7 +28,7 @@ class Test extends Component {
       };
 
       connection.onmessage = function (event) {
-        console.log(event.userid + ' said: ' + event.data);
+
       };
 
       connection.openOrJoin('your-room-id');

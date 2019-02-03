@@ -52,7 +52,7 @@ class CallButton extends Component {
     } = this.props;
 
 
-    // console.log("CallButton", room, currentUser);
+
 
     if (!room || !currentUser) {
       return null;
@@ -150,7 +150,7 @@ class CallButton extends Component {
       // if (called) {
 
 
-      // console.log("called", called, members);
+
 
 
       if (called) {

@@ -161,7 +161,7 @@ export default compose(
     name: "balance",
     options: props => {
 
-      console.log("PayButton options", props);
+
 
       const {
         room: {

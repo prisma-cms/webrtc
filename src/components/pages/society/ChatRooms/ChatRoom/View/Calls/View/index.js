@@ -20,7 +20,7 @@ export default class CallsRow extends PrismaCmsComponent {
   async updateCall(data) {
 
 
-    console.log("updateCall");
+
 
     return;
 
@@ -56,7 +56,7 @@ export default class CallsRow extends PrismaCmsComponent {
       })
     // .catch(console.error);
 
-    // console.log("updateCall result", result);
+
 
   }
 
@@ -64,7 +64,7 @@ export default class CallsRow extends PrismaCmsComponent {
   // callUser
   callUser = (userId, roomId) => {
 
-    console.log("callUser");
+
 
     const {
       callUser,
@@ -79,7 +79,7 @@ export default class CallsRow extends PrismaCmsComponent {
 
   componentDidUpdate(){
 
-    console.log("CallsRow componentDidUpdate", this.context.streams);
+
 
     super.componentDidUpdate && super.componentDidUpdate();
   }
