@@ -46,11 +46,9 @@ import RTCMultiConnection from "rtcmulticonnection";
 
 // import Test from "./Test";
 
-import adapter from 'webrtc-adapter/out/adapter';
+// import adapter from 'webrtc-adapter/out/adapter';
+// global.adapter = adapter;
 
-// console.log("adapter", adapter);
-
-global.adapter = adapter;
 global.io = io;
 global.RTCMultiConnection = RTCMultiConnection;
 // global.adapter = adapter;
@@ -87,11 +85,8 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   componentDidMount() {
 
-    // const adapter = require('webrtc-adapter/out/adapter');
-
-    // console.log("adapter", adapter);
-
-    // global.adapter = adapter;
+    const adapter = require('webrtc-adapter/out/adapter');
+    global.adapter = adapter;
 
     this.init();
   }
