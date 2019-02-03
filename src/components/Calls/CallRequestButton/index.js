@@ -180,7 +180,7 @@ export class CallRequestButton extends Component {
           // >
           //   <audio
           //     key="callingRington"
-          //     src="/media/whatsapp.mp3"
+          //     src="/media/call.mp3"
           //     autoPlay
           //     loop
           //   // controls
@@ -239,7 +239,7 @@ export class CallRequestButton extends Component {
 
               <audio
                 key="callingRington"
-                src="/media/whatsapp.mp3"
+                src="/media/call.mp3"
                 autoPlay
                 loop
               // controls
