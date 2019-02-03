@@ -44,7 +44,7 @@ import ChatRoomPage from '../../pages/society/ChatRooms/ChatRoom';
 
 import RTCMultiConnection from "rtcmulticonnection";
 
-import Test from "./Test";
+// import Test from "./Test";
 
 import adapter from 'webrtc-adapter';
 
