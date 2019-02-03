@@ -54,39 +54,63 @@ class ContextProvider extends Component {
 
   }
 
+
   prepareQuery() {
 
     return {
-      ...this.prepareUserQuery(),
+      ...this.prepareCallRequestQuery(),
     }
   }
 
-  prepareUserQuery() {
 
-
+  prepareCallRequestQuery() {
     const {
       queryFragments,
     } = this.context;
 
 
     const {
+      ChatRoomNoNestingFragment,
+      CallRequestNoNestingFragment,
       UserNoNestingFragment,
       BatchPayloadNoNestingFragment,
     } = queryFragments;
 
 
+    const callRequestFragment = `
+      fragment callRequest on CallRequest {
+        ...CallRequestNoNesting
+        Called{
+          ...UserNoNesting
+        }
+        Caller{
+          ...UserNoNesting
+        }
+        Room{
+          ...ChatRoomNoNesting
+          Members{
+            ...UserNoNesting
+          }
+        }
+      }
 
-    const usersConnection = `
-      query usersConnection (
-        $where: UserWhereInput
-        $orderBy: UserOrderByInput
+      ${CallRequestNoNestingFragment}
+      ${UserNoNestingFragment}
+      ${ChatRoomNoNestingFragment}
+    `;
+
+
+    const callRequestsConnection = `
+      query callRequestsConnection (
+        $where: CallRequestWhereInput
+        $orderBy: CallRequestOrderByInput
         $skip: Int
         $after: String
         $before: String
         $first: Int
         $last: Int
       ){
-        objectsConnection: usersConnection (
+        objectsConnection: callRequestsConnection (
           where: $where
           orderBy: $orderBy
           skip: $skip
@@ -100,27 +124,27 @@ class ContextProvider extends Component {
           }
           edges{
             node{
-              ...UserNoNesting
+              ...callRequest
             }
           }
         }
       }
 
-      ${UserNoNestingFragment}
+      ${callRequestFragment}
     `;
 
 
-    const users = `
-      query users (
-        $where: UserWhereInput
-        $orderBy: UserOrderByInput
+    const callRequests = `
+      query callRequests (
+        $where: CallRequestWhereInput
+        $orderBy: CallRequestOrderByInput
         $skip: Int
         $after: String
         $before: String
         $first: Int
         $last: Int
       ){
-        objects: users (
+        objects: callRequests (
           where: $where
           orderBy: $orderBy
           skip: $skip
@@ -129,34 +153,34 @@ class ContextProvider extends Component {
           first: $first
           last: $last
         ){
-          ...UserNoNesting
+          ...callRequest
         }
       }
 
-      ${UserNoNestingFragment}
+      ${callRequestFragment}
     `;
 
 
-    const user = `
-      query user (
-        $where: UserWhereUniqueInput!
+    const callRequest = `
+      query callRequest (
+        $where: CallRequestWhereUniqueInput!
       ){
-        object: user (
+        object: callRequest(
           where: $where
         ){
-          ...UserNoNesting
+          ...callRequest
         }
       }
 
-      ${UserNoNestingFragment}
+      ${callRequestFragment}
     `;
 
 
-    const createUserProcessor = `
-      mutation createUserProcessor(
-        $data: UserCreateInput!
+    const createCallRequestProcessor = `
+      mutation createCallRequestProcessor(
+        $data: CallRequestCreateInput!
       ) {
-        response: createUserProcessor(
+        response: createCallRequestProcessor(
           data: $data
         ){
           success
@@ -166,21 +190,21 @@ class ContextProvider extends Component {
             message
           }
           data{
-            ...UserNoNesting
+            ...callRequest
           }
         }
       }
 
-      ${UserNoNestingFragment}
+      ${callRequestFragment}
     `;
 
 
-    const updateUserProcessor = `
-      mutation updateUserProcessor(
-        $data: UserUpdateInput!
-        $where: UserWhereUniqueInput!
+    const updateCallRequestProcessor = `
+      mutation updateCallRequestProcessor(
+        $data: CallRequestUpdateInput!
+        $where: CallRequestWhereUniqueInput!
       ) {
-        response: updateUserProcessor(
+        response: updateCallRequestProcessor(
           data: $data
           where: $where
         ){
@@ -191,35 +215,34 @@ class ContextProvider extends Component {
             message
           }
           data{
-            ...UserNoNesting
+            ...callRequest
           }
         }
       }
 
-      ${UserNoNestingFragment}
+      ${callRequestFragment}
     `;
 
 
-
-    const deleteUser = `
-      mutation deleteUser (
-        $where: UserWhereUniqueInput!
+    const deleteCallRequest = `
+      mutation deleteCallRequest (
+        $where: CallRequestWhereUniqueInput!
       ){
-        deleteUser(
+        deleteCallRequest(
           where: $where
         ){
-          ...UserNoNesting
+          ...CallRequestNoNesting
         }
       }
-      ${UserNoNestingFragment}
+      ${CallRequestNoNestingFragment}
     `;
 
 
-    const deleteManyUsers = `
-      mutation deleteManyUsers (
-        $where: UserWhereInput
+    const deleteManyCallRequests = `
+      mutation deleteManyCallRequests (
+        $where: CallRequestWhereInput
       ){
-        deleteManyUsers(
+        deleteManyCallRequests(
           where: $where
         ){
           ...BatchPayloadNoNesting
@@ -230,15 +253,14 @@ class ContextProvider extends Component {
 
 
     return {
-      usersConnection,
-      users,
-      user,
-      createUserProcessor,
-      updateUserProcessor,
-      deleteUser,
-      deleteManyUsers,
+      callRequestsConnection,
+      callRequests,
+      callRequest,
+      createCallRequestProcessor,
+      updateCallRequestProcessor,
+      deleteCallRequest,
+      deleteManyCallRequests,
     }
-
   }
 
 }

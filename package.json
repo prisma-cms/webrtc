@@ -14,8 +14,11 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@fi1osof/rtcmulticonnection-v3": "^3.4.4",
     "@prisma-cms/context": "latest",
-    "graphql": "14.0.2"
+    "@prisma-cms/society": "latest",
+    "graphql": "14.0.2",
+    "rtcmulticonnection": "^3.6.8"
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",

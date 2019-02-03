@@ -34,10 +34,11 @@ export default class SubscriptionProvider extends Component {
 
     const {
       client,
+      user: currentUser,
     } = this.context;
 
 
-    if(!client){
+    if (!client) {
       console.error("client is empty");
       return;
     }
@@ -50,20 +51,22 @@ export default class SubscriptionProvider extends Component {
     } = this.state;
 
 
-    const subscribeUser = gql`
-      subscription user{
-        user{
-          mutation
-          node{
-            id
+    // if(currentUser) {
+
+    const subscribecallRequest = gql`
+        subscription callRequest{
+          callRequest{
+            mutation
+            node{
+              id
+            }
           }
         }
-      }
-    `;
+      `;
 
-    const userSub = await client
+    const callRequestSub = await client
       .subscribe({
-        query: subscribeUser,
+        query: subscribecallRequest,
         variables: {
         },
       })
@@ -72,14 +75,19 @@ export default class SubscriptionProvider extends Component {
 
           await this.reloadData();
 
+          this.forceUpdate();
+
         },
         error(error) {
-          console.error('subscribeCalls callback with error: ', error)
+          console.error('subscribeCallRequests callRequestback with error: ', error)
         },
       });
 
 
-    subscriptions.push(userSub);
+    subscriptions.push(callRequestSub);
+
+    // }
+
 
     this.setState({
       subscriptions,
@@ -126,7 +134,8 @@ export default class SubscriptionProvider extends Component {
 
     await loadApiData();
 
-    await client.reFetchObservableQueries();
+    // await client.reFetchObservableQueries();
+    await client.resetStore();
 
   }
 
@@ -135,7 +144,7 @@ export default class SubscriptionProvider extends Component {
 
     const {
       children,
-      user,
+      callRequest,
       client,
       loadApiData,
       ...other
