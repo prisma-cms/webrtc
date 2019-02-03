@@ -27,6 +27,9 @@ export default class DevApp extends Component {
 
     return <PrismaCmsApp
       Renderer={DevRenderer}
+      apolloOptions={{
+        localStorage: global.sessionStorage,
+      }}
       // pure={true}
       {...other}
     />

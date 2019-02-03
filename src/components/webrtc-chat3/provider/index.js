@@ -44,9 +44,13 @@ import ChatRoomPage from '../../pages/society/ChatRooms/ChatRoom';
 
 import RTCMultiConnection from "rtcmulticonnection";
 
+import Test from "./Test";
+
+// import adapter from 'webrtc-adapter';
+
 global.io = io;
 global.RTCMultiConnection = RTCMultiConnection;
-
+// global.adapter = adapter;
 
 
 export default class WebRtcProvider extends PrismaCmsComponent {
@@ -80,6 +84,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
   componentDidMount() {
 
+    console.log("WebRtcProvider componentDidMount");
 
     this.init();
   }
@@ -117,7 +122,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
   }
 
 
-  forceUpdate(){
+  forceUpdate() {
 
     console.log("forceUpdate");
 
@@ -377,7 +382,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       }
 
 
-      connection.socketMessageEvent = 'video-conference-demo';
+      // connection.socketMessageEvent = 'video-conference-demo';
 
 
       connection.session = mediaConstraints;
@@ -435,7 +440,9 @@ export default class WebRtcProvider extends PrismaCmsComponent {
         }
 
 
-        // this.forceUpdate();
+        this.forceUpdate();
+
+        return;
 
       };
 
@@ -444,8 +451,13 @@ export default class WebRtcProvider extends PrismaCmsComponent {
         console.log("openOrJoin isRoomExists, roomid", isRoomExists, roomid);
       });
 
+      this.forceUpdate();
 
-      // this.forceUpdate();
+      // setTimeout(() => {
+
+      // }, 1000)
+
+      return;
 
     });
 
@@ -750,6 +762,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
     switch (status) {
 
       case "created":
+      case "Created":
 
         break;
 
@@ -778,7 +791,12 @@ export default class WebRtcProvider extends PrismaCmsComponent {
            * 
            */
 
-          this.addConnection(roomId);
+          
+          setTimeout(() => {
+
+            this.addConnection(roomId);
+
+          }, 5000);
         }
 
 
@@ -1046,6 +1064,8 @@ export default class WebRtcProvider extends PrismaCmsComponent {
       isCalling,
     } = this.state;
 
+
+    // return <Test />
 
     return super.render(
       <Context.Consumer>

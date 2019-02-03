@@ -59,7 +59,7 @@ export class MediaStream extends Component {
 
     console.log("stream", stream);
 
-    return "Stream";
+    // return "Stream";
 
     const {
       active,
