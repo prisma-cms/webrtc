@@ -46,7 +46,7 @@ import RTCMultiConnection from "rtcmulticonnection";
 
 import Test from "./Test";
 
-// import adapter from 'webrtc-adapter';
+import adapter from 'webrtc-adapter';
 
 global.io = io;
 global.RTCMultiConnection = RTCMultiConnection;
