@@ -145,4 +145,6 @@ export class MediaStream extends Component {
   }
 }
 
-export default withStyles(styles)(MediaStream);
+export default withStyles(styles)(props => <MediaStream 
+  {...props}
+/>);

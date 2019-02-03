@@ -224,4 +224,6 @@ class CallButton extends Component {
   }
 }
 
-export default withStyles(styles)(CallButton);
+export default withStyles(styles)(props => <CallButton 
+  {...props}
+/>);

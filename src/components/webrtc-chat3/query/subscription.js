@@ -1,6 +1,5 @@
 import gql from "graphql-tag";
 
-
 export const callRequestSubscription = gql`
 
   subscription callRequest{
@@ -10,14 +9,19 @@ export const callRequestSubscription = gql`
         id
         Room{
           id
+          name
         }
         Called{
           id
           username
+          fullname
+          image
         }
         Caller{
           id
           username
+          fullname
+          image
         }
         caller_descriptions
         called_descriptions

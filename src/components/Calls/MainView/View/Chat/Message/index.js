@@ -155,4 +155,6 @@ class ChatMessage extends PrismaCmsComponent {
 }
 
 
-export default withStyles(styles)(ChatMessage);
+export default withStyles(styles)(props => <ChatMessage 
+  {...props}
+/>);

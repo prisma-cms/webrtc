@@ -9,7 +9,7 @@ import IconButton from 'material-ui/IconButton';
 
 import Context from "@prisma-cms/context";
 
-import CallRequest from "./CallRequest";
+import CallRequestButtons from "./CallRequestButtons";
 
 import MainView from "./MainView";
 
@@ -150,48 +150,62 @@ export class Calls extends Component {
 
 
 
-    const requestedCalls = callRequests && callRequests.filter(n => ["Created"].indexOf(n.status) !== -1) || [];
+    // const requestedCalls = callRequests && callRequests.filter(n => ["Created"].indexOf(n.status) !== -1) || [];
 
 
     // return "sdfdsf";
 
-    requestedCalls.map(requestedCall => {
+    // requestedCalls.map(requestedCall => {
 
-      const {
-        id: callRequestId,
-        // status,
-        Called: {
-          id: calledId,
-        },
-        // Call: {
-        //   // id: callId,
-        // },
-        Room: {
-          id: room,
-        },
-      } = requestedCall;
-
-
-      /**
-       * Если это новый звонок и адресован текущему пользователю, выводим запрос
-       */
-      if (calledId === currentUserId) {
-        callsView.push(<CallRequest
-          key={callRequestId}
-          item={currentCallRequest}
-          accept={event => {
-            acceptCall(callRequestId);
-            // setActiveCall(room);
-            // setActiveCall(currentCallRequest);
-          }}
-          reject={event => {
-            rejectCall(callRequestId);
-          }}
-        />)
-      }
+    //   const {
+    //     id: callRequestId,
+    //     // status,
+    //     Called: {
+    //       id: calledId,
+    //     },
+    //     // Call: {
+    //     //   // id: callId,
+    //     // },
+    //     Room: {
+    //       id: room,
+    //     },
+    //   } = requestedCall;
 
 
-    });
+    //   /**
+    //    * Если это новый звонок и адресован текущему пользователю, выводим запрос
+    //    */
+    //   if (calledId === currentUserId) {
+    //     callsView.push(<CallRequestButton
+    //       key={callRequestId}
+    //       item={currentCallRequest}
+    //       accept={event => {
+    //         acceptCall(callRequestId);
+    //         // setActiveCall(room);
+    //         // setActiveCall(currentCallRequest);
+    //       }}
+    //       reject={event => {
+    //         rejectCall(callRequestId);
+    //       }}
+    //     />)
+    //   }
+
+
+    // });
+
+
+    // callsView.push(<CallRequestButtons
+    //   // key={callRequestId}
+    //   // item={currentCallRequest}
+    //   // accept={event => {
+    //   //   acceptCall(callRequestId);
+    //   //   // setActiveCall(room);
+    //   //   // setActiveCall(currentCallRequest);
+    //   // }}
+    //   // reject={event => {
+    //   //   rejectCall(callRequestId);
+    //   // }}
+    // />)
 
 
     if (currentCallRequest) {

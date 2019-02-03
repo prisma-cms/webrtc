@@ -42,4 +42,6 @@ export class Message extends MessageView {
   }
 }
 
-export default withStyles(styles)(Message);
+export default withStyles(styles)(props => <Message 
+  {...props}
+/>);

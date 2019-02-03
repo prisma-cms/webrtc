@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import App, {
   ContextProvider,
   SubscriptionProvider,
+  WebRtcChatProvider,
 } from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
@@ -26,7 +27,7 @@ import ChatMessagePage from "../../components/pages/society/ChatMessages/ChatMes
 import MainMenu from './MainMenu';
 
 
-import WebRtcChatProvider from '../../components/webrtc-chat3';
+// import WebRtcChatProvider from '../../components/webrtc-chat3';
 
 export const styles = theme => {
 

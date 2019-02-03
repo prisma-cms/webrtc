@@ -109,7 +109,12 @@ export default class CallRequestsSubscriber extends Component {
               onDataReceived,
             } = this.props;
 
-            return onDataReceived && onDataReceived(data);
+
+            const result = onDataReceived && onDataReceived(data);
+
+            await this.reloadData();
+
+            return result;
           }
 
         },
@@ -134,6 +139,25 @@ export default class CallRequestsSubscriber extends Component {
       this.subscriptionObserver.unsubscribe();
 
     }
+  }
+
+
+
+  async reloadData() {
+
+    const {
+      client,
+      loadApiData,
+      rendererForceUpdate,
+    } = this.context;
+
+    await loadApiData();
+
+    // await client.reFetchObservableQueries();
+    await client.resetStore();
+
+    rendererForceUpdate();
+
   }
 
 

@@ -23,6 +23,7 @@ import {
 
 // import UserItem from './User';
 import UserItem from "@prisma-cms/front/lib/components/App/Renderer/MainMenu/User";
+import { CallRequestButtons } from '../../../App';
 
 export class MainMenu extends Component {
 
@@ -177,6 +178,14 @@ export class MainMenu extends Component {
           {user
             ?
             [
+              <Grid
+                key="calls"
+                item
+              >
+                <CallRequestButtons
+
+                />
+              </Grid>,
               <Grid
                 key="notifications"
                 item

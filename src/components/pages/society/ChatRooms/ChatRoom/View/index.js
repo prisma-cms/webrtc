@@ -42,6 +42,7 @@ export class ChatRoomView extends ChatRoomViewProto {
 
     const {
       Grid,
+      streams,
     } = this.context;
 
     const object = this.getObjectWithMutations();
@@ -50,34 +51,58 @@ export class ChatRoomView extends ChatRoomViewProto {
       classes,
     } = this.props;
 
-    return (
-      <Grid
-        container
-        className={classes.container}
-      >
 
+    let content = null;
+
+
+    if (streams && streams.length) {
+
+      content = (
         <Grid
-          item
-          xs={8}
+          container
+          className={classes.container}
         >
+
+          <Grid
+            item
+            xs={8}
+          >
+
+            <Calls
+              ChatRoom={object}
+            />
+
+          </Grid>
+
+          <Grid
+            item
+            xs={4}
+          >
+
+            {super.renderDefaultView()}
+
+          </Grid>
+
+        </Grid>
+      );
+
+    }
+    else {
+      content = (
+        <div>
 
           <Calls
             ChatRoom={object}
           />
 
-        </Grid>
-
-        <Grid
-          item
-          xs={4}
-        >
-
           {super.renderDefaultView()}
 
-        </Grid>
+        </div>
+      );
+    }
 
-      </Grid>
-    );
+    return content;
+
   }
 }
 

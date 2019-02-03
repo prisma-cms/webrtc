@@ -466,6 +466,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     this.forceUpdate();
 
+    return connection;
   }
 
 
@@ -791,7 +792,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
            * 
            */
 
-          
+
           setTimeout(() => {
 
             this.addConnection(roomId);
@@ -967,25 +968,25 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
 
 
-    const {
-      id: callerId,
-    } = caller;
+    // const {
+    //   id: callerId,
+    // } = caller;
 
-    const {
-      offer: callerOffer,
-      answer: callerAnswer,
-      sdp: callerSdp,
-    } = caller_descriptions;
+    // const {
+    //   offer: callerOffer,
+    //   answer: callerAnswer,
+    //   sdp: callerSdp,
+    // } = caller_descriptions;
 
-    const {
-      id: calledId,
-    } = called;
+    // const {
+    //   id: calledId,
+    // } = called;
 
-    let sdp = [];
-    let answer;
+    // let sdp = [];
+    // let answer;
 
 
-    await this.updateCallRequest(callRequestId, {
+    const result = await this.updateCallRequest(callRequestId, {
       status: "Accepted",
     })
       .then(r => {
@@ -997,11 +998,19 @@ export default class WebRtcProvider extends PrismaCmsComponent {
          */
         this.addConnection(roomId);
 
+        const {
+          router: {
+            history,
+          },
+        } = this.context;
+
+
+        history.push(`/chat-rooms/${roomId}`);
+
         return r;
       });
 
-    return;
-
+    return result;
   }
 
 

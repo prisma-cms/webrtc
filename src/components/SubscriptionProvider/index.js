@@ -32,66 +32,66 @@ export default class SubscriptionProvider extends Component {
 
   async subscribe() {
 
-    const {
-      client,
-      user: currentUser,
-    } = this.context;
+    // const {
+    //   client,
+    //   user: currentUser,
+    // } = this.context;
 
 
-    if (!client) {
-      console.error("client is empty");
-      return;
-    }
-
-    await this.unsubscribe();
-
-
-    let {
-      subscriptions,
-    } = this.state;
-
-
-    // if(currentUser) {
-
-    const subscribecallRequest = gql`
-        subscription callRequest{
-          callRequest{
-            mutation
-            node{
-              id
-            }
-          }
-        }
-      `;
-
-    const callRequestSub = await client
-      .subscribe({
-        query: subscribecallRequest,
-        variables: {
-        },
-      })
-      .subscribe({
-        next: async (data) => {
-
-          await this.reloadData();
-
-          this.forceUpdate();
-
-        },
-        error(error) {
-          console.error('subscribeCallRequests callRequestback with error: ', error)
-        },
-      });
-
-
-    subscriptions.push(callRequestSub);
-
+    // if (!client) {
+    //   console.error("client is empty");
+    //   return;
     // }
 
+    // await this.unsubscribe();
 
-    this.setState({
-      subscriptions,
-    });
+
+    // let {
+    //   subscriptions,
+    // } = this.state;
+
+
+    // // if(currentUser) {
+
+    // const subscribecallRequest = gql`
+    //     subscription callRequest{
+    //       callRequest{
+    //         mutation
+    //         node{
+    //           id
+    //         }
+    //       }
+    //     }
+    //   `;
+
+    // const callRequestSub = await client
+    //   .subscribe({
+    //     query: subscribecallRequest,
+    //     variables: {
+    //     },
+    //   })
+    //   .subscribe({
+    //     next: async (data) => {
+
+    //       await this.reloadData();
+
+    //       this.forceUpdate();
+
+    //     },
+    //     error(error) {
+    //       console.error('subscribeCallRequests callRequestback with error: ', error)
+    //     },
+    //   });
+
+
+    // subscriptions.push(callRequestSub);
+
+    // // }
+
+
+    // this.setState({
+    //   subscriptions,
+    // });
 
   }
 
@@ -130,12 +130,15 @@ export default class SubscriptionProvider extends Component {
     const {
       client,
       loadApiData,
+      rendererForceUpdate,
     } = this.context;
 
     await loadApiData();
 
     // await client.reFetchObservableQueries();
     await client.resetStore();
+
+    rendererForceUpdate();
 
   }
 
@@ -150,10 +153,12 @@ export default class SubscriptionProvider extends Component {
       ...other
     } = this.props;
 
-    return children ? <children.type
-      {...children.props}
-      {...other}
-    /> : null;
+    return children || null;
+
+    // return children ? <children.type
+    //   {...children.props}
+    //   {...other}
+    // /> : null;
 
   }
 

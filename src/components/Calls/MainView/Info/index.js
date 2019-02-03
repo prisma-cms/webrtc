@@ -61,4 +61,6 @@ export class RoomInfo extends Component {
   }
 }
 
-export default withStyles(styles)(RoomInfo);
+export default withStyles(styles)(props => <RoomInfo 
+  {...props}
+/>);

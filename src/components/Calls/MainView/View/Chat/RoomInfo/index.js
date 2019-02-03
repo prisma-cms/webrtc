@@ -546,4 +546,6 @@ class RoomInfo extends PrismaCmsComponent {
   }
 }
 
-export default withStyles(styles)(RoomInfo);
+export default withStyles(styles)(props => <RoomInfo 
+  {...props}
+/>);

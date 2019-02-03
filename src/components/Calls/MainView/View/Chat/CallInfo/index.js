@@ -497,4 +497,6 @@ class CallInfo extends Component {
 }
 
 
-export default withStyles(styles)(CallInfo);
+export default withStyles(styles)(props => <CallInfo 
+  {...props}
+/>);

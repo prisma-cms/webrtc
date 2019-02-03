@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 
 import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui';
+import { withStyles, IconButton } from 'material-ui';
 
 import { MediaStream } from '../../webrtc-chat3';
 
@@ -15,13 +15,14 @@ import { MediaStream } from '../../webrtc-chat3';
 // import InfoIcon from "material-ui-icons/Info";
 // import BackIcon from "material-ui-icons/ArrowBack";
 // import ChatIcon from "material-ui-icons/Chat";
+import CallIcon from "material-ui-icons/Call";
 
-import CallingIcon from "material-ui-icons/PhoneInTalk";
-import HangupIcon from "material-ui-icons/CallEnd";
+// import CallingIcon from "material-ui-icons/PhoneInTalk";
+// import HangupIcon from "material-ui-icons/CallEnd";
 
 // import Member from "./Member";
 // import InviteMember from "./InviteMember";
-import { compose, graphql } from 'react-apollo';
+// import { compose, graphql } from 'react-apollo';
 
 import PrismaCmsComponent from "@prisma-cms/component";
 
@@ -73,12 +74,12 @@ let styles = {
       maxWidth: "100%",
     },
   },
-  closeButton: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    zIndex: 1,
-  },
+  // closeButton: {
+  //   position: "absolute",
+  //   top: 0,
+  //   right: 0,
+  //   zIndex: 1,
+  // },
   chat: {
     // overflowX: "auto",
     // padding: "30px 3% 5%",
@@ -597,32 +598,32 @@ export class CallMainView2 extends PrismaCmsComponent {
                 case "Created":
 
 
-                  buttons.push(<button
-                    key="calling"
-                    type="button"
-                    className="button btnCall transition-03 smooth circle"
-                    // onClick={event => {
-                    //   // callUser("cjdp665565yho01119wymwezk");
-                    //   this.callUser(expertId, callId);
-                    // }}
-                    // disabled={callRequests.filter(n => n.status === "Created").length > 0}
-                    style={{
-                      background: "#34c96f",
-                      color: "white",
-                      fontSize: 26,
-                      lineHeight: 60,
-                      width: 60,
-                      height: 60,
-                      textAlign: "center",
-                    }}
-                  >
+                  // buttons.push(<button
+                  //   key="calling"
+                  //   type="button"
+                  //   className="button btnCall transition-03 smooth circle"
+                  //   // onClick={event => {
+                  //   //   // callUser("cjdp665565yho01119wymwezk");
+                  //   //   this.callUser(expertId, callId);
+                  //   // }}
+                  //   // disabled={callRequests.filter(n => n.status === "Created").length > 0}
+                  //   style={{
+                  //     background: "#34c96f",
+                  //     color: "white",
+                  //     fontSize: 26,
+                  //     lineHeight: 60,
+                  //     width: 60,
+                  //     height: 60,
+                  //     textAlign: "center",
+                  //   }}
+                  // >
 
-                    <CallingIcon
-                      style={{
-                        margin: "0 auto",
-                      }}
-                    />
-                  </button>);
+                  //   <CallingIcon
+                  //     style={{
+                  //       margin: "0 auto",
+                  //     }}
+                  //   />
+                  // </button>);
 
                   break;
 
@@ -633,32 +634,32 @@ export class CallMainView2 extends PrismaCmsComponent {
                   /**
                    * Завершение вызова
                    */
-                  buttons.push(<button
-                    key="calling"
-                    type="button"
-                    className="button btnCall transition-03 smooth circle"
-                    onClick={event => {
-                      // callUser("cjdp665565yho01119wymwezk");
-                      this.closeCall(callRequestId);
-                    }}
-                    // disabled={callRequests.filter(n => n.status === "Created").length > 0}
-                    style={{
-                      background: "#f50057",
-                      color: "white",
-                      fontSize: 26,
-                      lineHeight: 60,
-                      width: 60,
-                      height: 60,
-                      textAlign: "center",
-                    }}
-                  >
+                  // buttons.push(<button
+                  //   key="calling"
+                  //   type="button"
+                  //   className="button btnCall transition-03 smooth circle"
+                  //   onClick={event => {
+                  //     // callUser("cjdp665565yho01119wymwezk");
+                  //     this.closeCall(callRequestId);
+                  //   }}
+                  //   // disabled={callRequests.filter(n => n.status === "Created").length > 0}
+                  //   style={{
+                  //     background: "#f50057",
+                  //     color: "white",
+                  //     fontSize: 26,
+                  //     lineHeight: 60,
+                  //     width: 60,
+                  //     height: 60,
+                  //     textAlign: "center",
+                  //   }}
+                  // >
 
-                    <HangupIcon
-                      style={{
-                        margin: "0 auto",
-                      }}
-                    />
-                  </button>);
+                  //   <HangupIcon
+                  //     style={{
+                  //       margin: "0 auto",
+                  //     }}
+                  //   />
+                  // </button>);
 
                   break;
 
@@ -670,32 +671,36 @@ export class CallMainView2 extends PrismaCmsComponent {
             }
             else {
 
-              buttons.push(<button
+              buttons.push(<IconButton
                 key="call"
-                type="button"
-                className="button btnCall transition-03 smooth circle"
+                // type="button"
+                // className="button btnCall transition-03 smooth circle"
                 onClick={event => {
                   // callUser("cjdp665565yho01119wymwezk");
                   this.callUser(expertId, roomId);
                 }}
                 // disabled={callRequests.filter(n => n.status === "Created").length > 0}
-                style={{
-                  background: "#34c96f",
-                  color: "white",
-                  fontSize: 26,
-                  lineHeight: 60,
-                  width: 60,
-                  height: 60,
-                  textAlign: "center",
-                }}
+                // style={{
+                //   background: "#34c96f",
+                //   color: "white",
+                //   fontSize: 26,
+                //   lineHeight: 60,
+                //   width: 60,
+                //   height: 60,
+                //   textAlign: "center",
+                // }}
+                color="primary"
               >
-                <i
+                {/* <i
                   className="icon fal fa-phone"
                   style={{
                     margin: "0 auto",
                   }}
-                ></i>
-              </button>);
+                ></i> */}
+                <CallIcon 
+
+                />
+              </IconButton>);
             }
           }
 
@@ -861,21 +866,23 @@ export class CallMainView2 extends PrismaCmsComponent {
     }
 
 
-    chatView = <TextChatView
-      room={ChatRoom}
-      callButtons={buttons}
-    // showVideoChatHandler={event => {
-    //   this.setState({
-    //     showVideoChat: true,
-    //   });
-    // }}
-    />
+    // chatView = <TextChatView
+    //   room={ChatRoom}
+    //   callButtons={buttons}
+    // // showVideoChatHandler={event => {
+    // //   this.setState({
+    // //     showVideoChat: true,
+    // //   });
+    // // }}
+    // />
 
+    chatView = buttons;
 
     let columns = [];
 
 
-    console.log("videoView", videoView);
+    // console.log("videoView", videoView);
+    // console.log("videoView otherStreamsView", otherStreamsView);
 
     if (otherStreamsView && otherStreamsView.length && videoView) {
 

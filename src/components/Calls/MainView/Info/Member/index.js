@@ -196,5 +196,7 @@ export class Member extends Component {
   }
 }
 
-export default withStyles(styles)(Member);
+export default withStyles(styles)(props => <Member 
+  {...props}
+/>);
 

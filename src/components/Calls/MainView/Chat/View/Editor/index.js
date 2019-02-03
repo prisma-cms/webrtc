@@ -190,5 +190,7 @@ export default compose(
     //   return {}
     // },
   }),
-)(withStyles(styles)(ChatMessageEditor));
+)(withStyles(styles)(props => <ChatMessageEditor 
+  {...props}
+/>));
 
