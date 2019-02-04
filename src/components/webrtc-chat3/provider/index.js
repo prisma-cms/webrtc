@@ -1104,7 +1104,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
               {children}
 
               {currentUser ? <CallRequestSubscriber
-                key={currentUser.id}
+                // key={currentUser.id}
                 user={currentUser}
                 onDataReceived={this.onCallDataReceived}
               /> : null}

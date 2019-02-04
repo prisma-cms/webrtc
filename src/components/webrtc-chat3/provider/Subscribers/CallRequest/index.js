@@ -62,13 +62,13 @@ export default class CallRequestsSubscriber extends Component {
       // localStorage,
     } = this.context;
 
-    const {
-      user: currentUser,
-    } = this.props;
+    // const {
+    //   user: currentUser,
+    // } = this.props;
 
-    if (!currentUser) {
-      return;
-    }
+    // if (!currentUser) {
+    //   return;
+    // }
 
     // const {
     //   id: subscriberId,

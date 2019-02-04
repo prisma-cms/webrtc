@@ -24,12 +24,12 @@ export default class WebRtcChatProvider extends PrismaCmsComponent {
     //   return null;
     // }
 
-    const {
-      id: currentUserId,
-    } = currentUser || {};
+    // const {
+    //   id: currentUserId,
+    // } = currentUser || {};
 
     return <Provider
-      key={currentUserId}
+      // key={currentUserId}
       user={currentUser}
       {...this.props}
     />
