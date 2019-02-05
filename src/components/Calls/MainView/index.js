@@ -697,7 +697,7 @@ export class CallMainView2 extends PrismaCmsComponent {
                     margin: "0 auto",
                   }}
                 ></i> */}
-                <CallIcon 
+                <CallIcon
 
                 />
               </IconButton>);
@@ -952,17 +952,28 @@ export class CallMainView2 extends PrismaCmsComponent {
         key="chatView"
         item
         xs={12}
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-        }}
+      // style={{
+      //   maxWidth: 1200,
+      //   margin: "0 auto",
+      // }}
       >
         {chatView}
       </Grid>);
     }
 
 
-    return super.render(columns || null);
+    let content = null;
+
+    if (columns.length) {
+      content = <Grid
+        container
+      >
+        {columns}
+      </Grid>
+    }
+
+
+    return super.render(content);
 
 
 

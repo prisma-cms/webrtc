@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -19,10 +19,13 @@ export const styles = theme => {
 
   return {
     ...defaultStyles(),
-    // container: {
-    //   // height: "100%",
-    //   flex: 1,
-    // },
+    roomWrapper: {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      flexBasis: "100%",
+      width: "100%",
+    },
   }
 };
 
@@ -89,19 +92,21 @@ export class ChatRoomView extends ChatRoomViewProto {
     }
     else {
       content = (
-        <div>
-
+        <Fragment>
           <Calls
             ChatRoom={object}
           />
 
           {super.renderDefaultView()}
-
-        </div>
+        </Fragment>
       );
     }
 
-    return content;
+    return <div
+      className={classes.roomWrapper}
+    >
+      {content}
+    </div>
 
   }
 }
