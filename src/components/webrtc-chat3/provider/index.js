@@ -60,6 +60,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
     ...PrismaCmsComponent.propTypes,
     children: PropTypes.object.isRequired,
     user: PropTypes.object,
+    connectionProps: PropTypes.object,
   }
 
 
@@ -332,7 +333,8 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     const {
       user: currentUser,
-      iceServers,
+      // iceServers,
+      connectionProps,
     } = this.props;
 
     if (connections.length || !currentUser) {
@@ -346,10 +348,16 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     var connection = new RTCMultiConnection();
 
-    if (iceServers) {
+    // if (iceServers) {
 
-      // https://www.rtcmulticonnection.org/docs/iceServers/
-      connection.iceServers = [...iceServers];
+    //   // https://www.rtcmulticonnection.org/docs/iceServers/
+    //   connection.iceServers = [...iceServers];
+    // }
+
+    if (connectionProps) {
+      Object.assign(connection, {
+        ...connectionProps,
+      });
     }
 
     const {

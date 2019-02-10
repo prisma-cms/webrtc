@@ -182,16 +182,37 @@ class Renderer extends PrismaCmsRenderer {
 
   renderWrapper() {
 
+    let iceServers = [];
+
+    iceServers.push({
+      'urls': [
+        'stun:localhost:3478',
+      ],
+      'username': 'test',
+      'credential': 'test'
+    });
+
+    iceServers.push({
+      'urls': [
+        'turn:localhost:3478',
+      ],
+      'username': 'test',
+      'credential': 'test'
+    });
+
     return <SocietyContextProvider>
       <SocietySubscriptionProvider>
         <ContextProvider>
           <SubscriptionProvider>
             <WebRtcChatProvider
-              iceServers={[{
-                'urls': [
-                  'stun:localhost:3478'
-                ],
-              }]}
+              connectionProps={{
+                iceServers,
+                // candidates: {
+                //   relay: true,
+                //   reflexive: true,
+                //   host: true,
+                // },
+              }}
             >
               {super.renderWrapper()}
             </WebRtcChatProvider>

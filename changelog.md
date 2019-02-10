@@ -1,3 +1,8 @@
+1.3.14
+=================================
+- Remove iceServers props
+- Added connectionProps
+
 1.3.13
 =================================
 - Added iceServers props
