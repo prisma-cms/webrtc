@@ -186,7 +186,13 @@ class Renderer extends PrismaCmsRenderer {
       <SocietySubscriptionProvider>
         <ContextProvider>
           <SubscriptionProvider>
-            <WebRtcChatProvider>
+            <WebRtcChatProvider
+              iceServers={[{
+                'urls': [
+                  'stun:localhost:3478'
+                ],
+              }]}
+            >
               {super.renderWrapper()}
             </WebRtcChatProvider>
           </SubscriptionProvider>

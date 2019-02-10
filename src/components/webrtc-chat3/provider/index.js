@@ -332,6 +332,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     const {
       user: currentUser,
+      iceServers,
     } = this.props;
 
     if (connections.length || !currentUser) {
@@ -345,6 +346,11 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
     var connection = new RTCMultiConnection();
 
+    if (iceServers) {
+
+      // https://www.rtcmulticonnection.org/docs/iceServers/
+      connection.iceServers = [...iceServers];
+    }
 
     const {
       hostname,
@@ -1077,6 +1083,9 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
 
     // return <Test />
+
+    // console.log("connections", connections, connections && connections[0]);
+    // console.log("connections iceServers", connections && connections[0] && connections[0].iceServers);
 
     return super.render(
       <Context.Consumer>
