@@ -8,6 +8,7 @@ import App, {
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 
+import MainMenu from './MainMenu';
 
 class DevRenderer extends PrismaCmsRenderer {
 
@@ -41,6 +42,13 @@ class DevRenderer extends PrismaCmsRenderer {
 
   }
 
+
+
+  renderMenu() {
+
+    return <MainMenu />
+  }
+  
 
   renderWrapper() {
 
