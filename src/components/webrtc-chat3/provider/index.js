@@ -1095,7 +1095,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
     // console.log("connections", connections, connections && connections[0]);
     // console.log("connections iceServers", connections && connections[0] && connections[0].iceServers);
 
-    return super.render(
+    return (
       <Context.Consumer>
         {context =>
 
@@ -1118,7 +1118,7 @@ export default class WebRtcProvider extends PrismaCmsComponent {
 
             <Fragment>
 
-              {children}
+              {super.render()}
 
               {currentUser ? <CallRequestSubscriber
                 // key={currentUser.id}

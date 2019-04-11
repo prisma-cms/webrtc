@@ -77,7 +77,7 @@ export const styles = theme => {
 }
 
 
-class Renderer extends PrismaCmsRenderer {
+class WebRtcRenderer extends PrismaCmsRenderer {
 
 
   static propTypes = {
@@ -256,6 +256,6 @@ class Renderer extends PrismaCmsRenderer {
 
 }
 
-export default withStyles(styles)(props => <Renderer
+export default withStyles(styles)(props => <WebRtcRenderer
   {...props}
 />);

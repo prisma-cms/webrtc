@@ -1,3 +1,8 @@
+1.3.15
+=================================
+- Upgrade @prisma-cms/component
+- Fix WebRtcProvider
+
 1.3.14
 =================================
 - Remove iceServers props
