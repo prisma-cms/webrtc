@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@prisma-cms/front": "latest",
+    "@prisma-cms/front-editor": "latest",
     "@prisma-cms/server": "latest",
     "graphql-cli": "2.17.0",
     "node-less-chokidar": "^0.3.1",
