@@ -1,3 +1,8 @@
+1.3.9
+=================================
+- Added source-map-explorer
+- Added yarn analyze
+
 1.3.8
 =================================
 - Added dev pages
