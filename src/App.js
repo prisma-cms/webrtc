@@ -13,9 +13,20 @@ export {
 class App extends PureComponent {
 
   render() {
+
+    const {
+      children,
+      ...other
+    } = this.props;
+
     return (
-      <div>
-        My awesome component
+      <div
+        {...other}
+      >
+        <h2>
+          My awesome component
+        </h2>
+        {children}
       </div>
     );
   }

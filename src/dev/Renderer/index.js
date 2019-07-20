@@ -55,6 +55,20 @@ class DevRenderer extends PrismaCmsRenderer {
         exact: true,
         path: "/",
         component: DevMainPage,
+        // render: props => {
+        //   // console.log("props", { ...props });
+        //   return <DevMainPage
+        //     {...props}
+        //   >
+        //     <div>
+        //     Test
+        //     </div>
+        //   </DevMainPage>;
+        // }
+        // render: props => {
+        //   console.log("props", { ...props });
+        //   return null;
+        // }
       },
       // {
       //   path: "*",

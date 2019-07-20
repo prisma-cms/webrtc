@@ -1,3 +1,8 @@
+1.4.1
+=================================
+- Added @prisma-cms/performance dev dependency
+- Fix tests
+
 1.4.0
 =================================
 - Remove queryFragments
