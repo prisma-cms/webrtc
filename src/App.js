@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 import "./styles/less/styles.css";
-
-import Context from '@prisma-cms/context';
 
 import SubscriptionProvider from "./components/SubscriptionProvider";
 import ContextProvider from "./components/ContextProvider";
@@ -13,9 +10,7 @@ export {
   SubscriptionProvider,
 }
 
-class App extends Component {
-
-  static contextType = Context;
+class App extends PureComponent {
 
   render() {
     return (

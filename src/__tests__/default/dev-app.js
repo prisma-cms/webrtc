@@ -11,8 +11,8 @@ import TestApp from "./App";
 
 class Renderer extends Component {
 
-  static propTypes = {
-  }
+  // static propTypes = {
+  // }
 
   render() {
 

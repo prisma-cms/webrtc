@@ -1,3 +1,8 @@
+1.4.0
+=================================
+- Remove queryFragments
+- Remove server scripts
+
 1.3.9
 =================================
 - Added source-map-explorer

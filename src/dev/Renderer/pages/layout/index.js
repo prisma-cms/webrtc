@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import Context from "@prisma-cms/context";
 
-class DevPageLayout extends Component {
+class DevPageLayout extends PureComponent {
 
   static contextType = Context;
 
 
-  render(content = null) {
+  render(content) {
 
-    return content;
+    return content || null;
   }
 }
 
