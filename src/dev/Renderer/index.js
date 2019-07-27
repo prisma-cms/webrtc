@@ -9,7 +9,7 @@ import App, {
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
 import Context from '@prisma-cms/context'
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 import MainMenu from './MainMenu';
 import DevMainPage from './pages/MainPage';

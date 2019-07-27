@@ -15,7 +15,7 @@ import {
 
 
 import { compose, graphql } from 'react-apollo';
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 
 const styles = {

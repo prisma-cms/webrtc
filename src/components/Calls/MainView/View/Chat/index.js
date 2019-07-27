@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import RoomView from "../";
-import { withStyles, Typography, IconButton } from 'material-ui';
+import IconButton from 'material-ui/IconButton';
+import withStyles from 'material-ui/styles/withStyles'
 
 import Grid from "material-ui/Grid";
 
 import InfoIcon from "material-ui-icons/InfoOutline";
-import SendIcon from "material-ui-icons/Send";
 import CloseIcon from "material-ui-icons/Clear";
 
 import PrismaCmsComponent from "@prisma-cms/component";

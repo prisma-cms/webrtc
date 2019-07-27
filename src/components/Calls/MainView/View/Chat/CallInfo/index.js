@@ -10,7 +10,11 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, Typography, Grid } from 'material-ui';
+
+import Typography from 'material-ui/Typography';
+import Grid from 'material-ui/Grid';
+import withStyles from 'material-ui/styles/withStyles';
+
 
 
 // import MiniModal from "ui/MiniModal";

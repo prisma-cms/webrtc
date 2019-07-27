@@ -1,7 +1,9 @@
+1.4.0
 =================================
 - Upgrade boilerplate
 - Fix CallsView
 - Fix tests
+- Cleanup material-ui
 
 1.3.16
 =================================

@@ -7,7 +7,7 @@ import {
   ChatRoomView as ChatRoomViewProto,
 } from "@prisma-cms/society/lib/components/pages/ChatRooms/View/Object";
 
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 // import Call from "./Call";
 // import CallsView from "./Calls/View";

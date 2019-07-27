@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 import { Message as MessageView, styles } from "../../../../../../../pages/Chats/Chat/View/Message";
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 export class Message extends MessageView {
 

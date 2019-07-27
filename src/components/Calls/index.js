@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui';
-
-import CloseIcon from 'material-ui-icons/Clear';
-import TalkIcon from 'material-ui-icons/PhoneInTalk';
-
-import IconButton from 'material-ui/IconButton';
+import withStyles from 'material-ui/styles/withStyles';
 
 import Context from "@prisma-cms/context";
-
-import CallRequestButtons from "./CallRequestButtons";
 
 import MainView from "./MainView";
 

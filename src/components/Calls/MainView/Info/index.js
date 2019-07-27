@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Member from "./Member";
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 const styles = {
   root: {

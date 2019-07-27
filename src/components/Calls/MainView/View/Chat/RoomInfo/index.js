@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui';
+import withStyles from 'material-ui/styles/withStyles';
 
 import MiniModal from "ui/MiniModal";
 
 import Grid from "material-ui/Grid";
-import { IconButton } from 'material-ui';
+import IconButton from 'material-ui/IconButton';
 
 // import Avatar from 'Avatar';
 

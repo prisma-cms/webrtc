@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, Grid } from 'material-ui';
+import Grid from 'material-ui/Grid';
+import withStyles from 'material-ui/styles/withStyles';
 
 
 // import MessageEditor from "ui/Chat/Message/Editor";

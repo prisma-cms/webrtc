@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withStyles, IconButton } from 'material-ui';
+import IconButton from 'material-ui/IconButton';
+import withStyles from 'material-ui/styles/withStyles'
 
 import Context from "@prisma-cms/context"
 
