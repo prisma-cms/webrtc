@@ -11,8 +11,8 @@ import TestApp from "./App";
 
 class Renderer extends Component {
 
-  static propTypes = {
-  }
+  // static propTypes = {
+  // }
 
   render() {
 
@@ -64,14 +64,19 @@ describe('@prisma-cms/tests app', () => {
 
 
   it('Render Index App', () => {
-  
-    require("../../index"); 
 
-    expect(node.textContent).toContain("Main page");
-    expect(node.textContent).toContain("Users");
-    expect(node.textContent).toContain("Signin");
- 
-   
+    require("../../index");
+
+    // console.log('node', node);
+    // console.log('node.innerHTML', node.innerHTML);
+    // console.log('node.querySelector("#content").textContent', node.querySelector("#content").textContent);
+
+    expect(node.querySelector("#content").textContent).toContain("Main page");
+    expect(node.querySelector("#buttons").textContent).toContain("Force update");
+    expect(node.querySelector("#prisma-cms-performance-tester")).toNotBe(null);
+    // expect(node.textContent).toContain("Users");
+    // expect(node.textContent).toContain("Signin");
+
   });
 
 })

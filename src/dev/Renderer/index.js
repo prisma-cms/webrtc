@@ -8,7 +8,30 @@ import App, {
 } from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
+import Context from '@prisma-cms/context'
 import { withStyles } from 'material-ui';
+
+import MainMenu from './MainMenu';
+import DevMainPage from './pages/MainPage';
+
+
+// export const styles = {
+
+//   root: {
+//     // border: "1px solid blue",
+//     height: "100%",
+//     display: "flex",
+//     flexDirection: "column",
+
+//     "& #Renderer--body": {
+//       // border: "1px solid green",
+//       flex: 1,
+//       overflow: "auto",
+//       display: "flex",
+//       flexDirection: "column",
+//     },
+//   },
+// }
 
 
 import {
@@ -24,10 +47,10 @@ import CreateChatRoomPage from "../../components/pages/society/ChatRooms/ChatRoo
 import ChatMessagesPage from "../../components/pages/society/ChatMessages";
 import ChatMessagePage from "../../components/pages/society/ChatMessages/ChatMessage";
 
-import MainMenu from './MainMenu';
-
 
 // import WebRtcChatProvider from '../../components/webrtc-chat3';
+
+import * as queryFragments from "../../schema/generated/api.fragments";
 
 export const styles = theme => {
 
@@ -77,7 +100,7 @@ export const styles = theme => {
 }
 
 
-class WebRtcRenderer extends PrismaCmsRenderer {
+class DevRenderer extends PrismaCmsRenderer {
 
 
   static propTypes = {
@@ -105,7 +128,21 @@ class WebRtcRenderer extends PrismaCmsRenderer {
       {
         exact: true,
         path: "/",
-        component: App,
+        component: DevMainPage,
+        // render: props => {
+        //   // console.log("props", { ...props });
+        //   return <DevMainPage
+        //     {...props}
+        //   >
+        //     <div>
+        //     Test
+        //     </div>
+        //   </DevMainPage>;
+        // }
+        // render: props => {
+        //   console.log("props", { ...props });
+        //   return null;
+        // }
       },
       // {
       //   exact: true,
@@ -180,6 +217,13 @@ class WebRtcRenderer extends PrismaCmsRenderer {
   }
 
 
+
+  renderMenu() {
+
+    return <MainMenu />
+  }
+
+
   renderWrapper() {
 
     let iceServers = [];
@@ -200,26 +244,47 @@ class WebRtcRenderer extends PrismaCmsRenderer {
       'credential': 'test'
     });
 
-    return <SocietyContextProvider>
-      <SocietySubscriptionProvider>
-        <ContextProvider>
-          <SubscriptionProvider>
-            <WebRtcChatProvider
-              connectionProps={{
-                iceServers,
-                // candidates: {
-                //   relay: true,
-                //   reflexive: true,
-                //   host: true,
-                // },
-              }}
-            >
-              {super.renderWrapper()}
-            </WebRtcChatProvider>
-          </SubscriptionProvider>
-        </ContextProvider>
-      </SocietySubscriptionProvider>
-    </SocietyContextProvider>;
+    return <Context.Consumer>
+      {context => {
+
+        {/* const {
+          schema,
+        } = context;
+
+        if (!schema) {
+          return null;
+        } */}
+
+        return <Context.Provider
+          value={Object.assign(context, this.context, {
+            queryFragments,
+          })}
+        >
+          <SocietyContextProvider>
+            <SocietySubscriptionProvider>
+              <ContextProvider>
+                <SubscriptionProvider>
+                  <WebRtcChatProvider
+                    connectionProps={{
+                      iceServers,
+                      // candidates: {
+                      //   relay: true,
+                      //   reflexive: true,
+                      //   host: true,
+                      // },
+                    }}
+                  >
+                    {super.renderWrapper()}
+                  </WebRtcChatProvider>
+                </SubscriptionProvider>
+              </ContextProvider>
+            </SocietySubscriptionProvider>
+          </SocietyContextProvider>
+        </Context.Provider>
+
+
+      }}
+    </Context.Consumer>
 
   }
 
@@ -232,30 +297,28 @@ class WebRtcRenderer extends PrismaCmsRenderer {
       ...other
     } = this.props;
 
-    return <div
-      className={classes.root}
-    >
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          html, body, #root {
-            height: 100%;
-          }
-        `,
-        }}
-      />
-      {pure ?
-        <App
-          {...other}
+    return pure ? <App
+      {...other}
+    /> :
+      <div
+        className={classes.root}
+      >
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            body, html, #root{
+              height: 100%;
+            }
+          `,
+          }}
         />
-        : super.render()
-      }
-    </div>
+        {super.render()}
+      </div>;
 
   }
 
 }
 
-export default withStyles(styles)(props => <WebRtcRenderer
+export default withStyles(styles)(props => <DevRenderer
   {...props}
 />);

@@ -1,3 +1,8 @@
+=================================
+- Upgrade boilerplate
+- Fix CallsView
+- Fix tests
+
 1.3.16
 =================================
 - Fix pages

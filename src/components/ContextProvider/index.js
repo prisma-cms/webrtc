@@ -1,33 +1,14 @@
 
 import React, {
-  Component,
+  PureComponent,
 } from 'react';
 
 import Context from '@prisma-cms/context';
 
 
-class ContextProvider extends Component {
+class ContextProvider extends PureComponent {
 
   static contextType = Context;
-
-
-  // componentWillMount() {
-
-  //   const {
-  //     query,
-  //     ...other
-  //   } = this.context;
-
-  //   this.newContext = {
-  //     query: {
-  //       ...query,
-  //       ...this.prepareQuery(),
-  //     },
-  //     ...other
-  //   }
-
-  // }
-
 
   render() {
 

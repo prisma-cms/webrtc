@@ -1,12 +1,12 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import gql from "graphql-tag";
 
 import Context from '@prisma-cms/context';
 
-export default class SubscriptionProvider extends Component {
+export default class SubscriptionProvider extends PureComponent {
 
 
   static contextType = Context;

@@ -31,15 +31,17 @@ export const styles = theme => {
 
 
 export class ChatRoomView extends ChatRoomViewProto {
+  
+  static propTypes = {
+    ...ChatRoomViewProto.propTypes,
+    use_calls: PropTypes.bool.isRequired,
+  }
 
-
-  // constructor(props){
-
-  //   super(props);
-
-
-
-  // }
+  static defaultProps = {
+    ...ChatRoomViewProto.defaultProps,
+    use_calls: true,
+  }
+  
 
   renderDefaultView() {
 
@@ -52,13 +54,18 @@ export class ChatRoomView extends ChatRoomViewProto {
 
     const {
       classes,
+      use_calls,
     } = this.props;
 
 
     let content = null;
 
+    if (!use_calls) {
 
-    if (streams && streams.length) {
+      content = super.renderDefaultView();
+
+    }
+    else if (streams && streams.length) {
 
       content = (
         <Grid
@@ -115,3 +122,10 @@ export class ChatRoomView extends ChatRoomViewProto {
 export default withStyles(styles)(props => <ChatRoomView
   {...props}
 />);
+
+// export default withStyles(styles)(props => <ChatRoomView
+//   {...props}
+//   data={{
+//     object: {},
+//   }}
+// />);

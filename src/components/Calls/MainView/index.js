@@ -513,14 +513,20 @@ export class CallMainView2 extends PrismaCmsComponent {
         // User: {
         //   id: expertId,
         // },
-        CreatedBy: {
-          id: expertId,
-        },    // Call requester
+        CreatedBy,    // Call requester
       } = ChatRoom;
 
+      
+      if(!CreatedBy) {
+        return null;
+      }
+
+      const {
+        id: expertId,
+      } = CreatedBy;
+
+      
       const callStatus = "Accepted";
-
-
 
 
       switch (callStatus) {
