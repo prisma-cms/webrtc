@@ -1,3 +1,7 @@
+1.4.2
+=================================
+- Fix router
+
 1.4.1
 =================================
 - Added @prisma-cms/performance dev dependency
