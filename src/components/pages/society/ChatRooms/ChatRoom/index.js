@@ -31,6 +31,20 @@ class ChatRoomPage extends Page {
         View={View}
       />
     );
+
+    return <div
+      style={{
+        height: 600,
+        border: "1px solid red",
+      }}
+    >
+      {super.render(
+        <ChatRoom
+          {...this.props}
+          View={View}
+        />
+      )}
+    </div>;
   }
 }
 

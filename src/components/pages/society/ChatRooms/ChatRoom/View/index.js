@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -20,19 +20,19 @@ export const styles = theme => {
   return {
     ...defaultStyles(),
     roomWrapper: {
-      flex: 1,
       display: "flex",
       flexDirection: "column",
-      flexBasis: "100%",
       width: "100%",
+      height: "100%",
     },
   }
 };
 
 
 export class ChatRoomView extends ChatRoomViewProto {
-  
+
   static propTypes = {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     ...ChatRoomViewProto.propTypes,
     use_calls: PropTypes.bool.isRequired,
   }
@@ -41,7 +41,7 @@ export class ChatRoomView extends ChatRoomViewProto {
     ...ChatRoomViewProto.defaultProps,
     use_calls: true,
   }
-  
+
 
   renderDefaultView() {
 
@@ -114,6 +114,26 @@ export class ChatRoomView extends ChatRoomViewProto {
     >
       {content}
     </div>
+
+    // return <div
+    //   // className={classes.root}
+    //   style={{
+    //     border: "2px solid green",
+    //     // flex: 1,
+    //     // position: "relative",
+    //     // overflow: "hidden",
+
+    //     height: "100%",
+    //     display: "flex",
+    //     flexDirection: "column",
+    //   }}
+    // >
+    //   <div
+    //     className={classes.roomWrapper}
+    //   >
+    //     {content}
+    //   </div>
+    // </div>
 
   }
 }
