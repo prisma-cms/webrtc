@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 
 import App, {
@@ -104,6 +104,7 @@ class DevRenderer extends PrismaCmsRenderer {
 
 
   static propTypes = {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     ...PrismaCmsRenderer.propTypes,
     pure: PropTypes.bool.isRequired,
   }
@@ -217,13 +218,6 @@ class DevRenderer extends PrismaCmsRenderer {
   }
 
 
-
-  renderMenu() {
-
-    return <MainMenu />
-  }
-
-
   renderWrapper() {
 
     let iceServers = [];
@@ -246,14 +240,6 @@ class DevRenderer extends PrismaCmsRenderer {
 
     return <Context.Consumer>
       {context => {
-
-        {/* const {
-          schema,
-        } = context;
-
-        if (!schema) {
-          return null;
-        } */}
 
         return <Context.Provider
           value={Object.assign(context, this.context, {
@@ -312,6 +298,7 @@ class DevRenderer extends PrismaCmsRenderer {
           `,
           }}
         />
+        {this.renderMenu()}
         {super.render()}
       </div>;
 

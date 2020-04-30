@@ -1,5 +1,5 @@
-import React, { PureComponent, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+// import PropTypes from 'prop-types';
 
 import App from '../App';
 
@@ -10,9 +10,9 @@ export default class DevApp extends App {
 
   render() {
 
-    const {
-      ...other
-    } = this.props;
+    // const {
+    //   ...other
+    // } = this.props;
 
     // return <PrismaCmsApp
     //   Renderer={DevRenderer}

@@ -1,8 +1,8 @@
 
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import { PureComponent } from 'react'
+// import PropTypes from 'prop-types'
 
-import gql from "graphql-tag";
+// import gql from "graphql-tag";
 
 import Context from '@prisma-cms/context';
 
@@ -110,6 +110,7 @@ export default class SubscriptionProvider extends PureComponent {
 
         subscriptions.map(n => {
           n.unsubscribe();
+          return null;
         });
 
         Object.assign(this.state, {
@@ -129,14 +130,25 @@ export default class SubscriptionProvider extends PureComponent {
 
     const {
       client,
-      loadApiData,
+      // loadApiData,
       rendererForceUpdate,
     } = this.context;
 
-    await loadApiData();
+    // await loadApiData();
 
-    // await client.reFetchObservableQueries();
-    await client.resetStore();
+    // // await client.reFetchObservableQueries();
+    // await client.resetStore();
+
+    if (!client.queryManager.fetchQueryRejectFns.size) {
+
+      // console.log("client", client);
+
+      return await client.resetStore()
+        .catch(error => {
+          console.error(error);
+        });
+
+    }
 
     rendererForceUpdate();
 
@@ -147,10 +159,10 @@ export default class SubscriptionProvider extends PureComponent {
 
     const {
       children,
-      callRequest,
-      client,
-      loadApiData,
-      ...other
+      // callRequest,
+      // client,
+      // loadApiData,
+      // ...other
     } = this.props;
 
     return children || null;
