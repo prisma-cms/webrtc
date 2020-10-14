@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react';
-
-import "./styles/less/styles.css";
-
 import SubscriptionProvider from "./components/SubscriptionProvider";
 import ContextProvider from "./components/ContextProvider";
 

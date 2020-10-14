@@ -1,3 +1,8 @@
+1.4.3
+=================================
+- Remove styles due styled-components compatibility
+  https://err.sh/next.js/css-npm
+
 1.4.2
 =================================
 - Fix router
